@@ -1,13 +1,16 @@
 import zipfile
+from consts import featureDIM
+
 class ZIPParse():
     def __init__(self):
-        self.feature = [0,0,0,0,0] # tot_size, res, lib, AndroidManifest.xml, classes*.dex
+        # tot_size, res, lib, AndroidManifest.xml, classes*.dex
+        self.feature = [0] * featureDIM 
     def getFeature(self,filename):
         try:
             zp = zipfile.ZipFile(filename)
         except:
-            return [0,0,0,0,0]
-        self.feature = [0,0,0,0,0]
+            return [0] * featureDIM
+        self.feature = [0] * featureDIM
         for fp in zp.filelist:
             this_name = fp.filename
             this_size = fp.file_size
