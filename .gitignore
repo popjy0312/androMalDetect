@@ -1,0 +1,5 @@
+*.pyc
+*.ipynb
+lists.csv
+__pycache__
+apks
