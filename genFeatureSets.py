@@ -24,7 +24,7 @@ if __name__ == '__main__':
     dataList.readline()
 #b'sha256,sha1,md5,dex_date,apk_size,pkg_name,vercode,vt_detection,vt_scan_date,dex_size,markets\n'
 
-    for i in range(DATASET_CNT):
+    for i in range(DATASET_CNT-100):
         print(i)
         l = dataList.readline()
         l = str(l).split(',')
