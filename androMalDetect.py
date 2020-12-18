@@ -8,7 +8,7 @@ import time
 
 from genFeatureSets import featureSet
 
-with open('featureSet', 'rb') as f:
+with open('featureSet2', 'rb') as f:
     fs = pickle.load(f)
 
 start = time.time()

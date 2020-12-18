@@ -24,13 +24,13 @@ if __name__ == '__main__':
     dataList.readline()
 #b'sha256,sha1,md5,dex_date,apk_size,pkg_name,vercode,vt_detection,vt_scan_date,dex_size,markets\n'
 
-    for i in range(DATASET_CNT-100):
+    for i in range(DATASET_CNT):
         print(i)
         l = dataList.readline()
         l = str(l).split(',')
         apkName = str(l[0])[2:] + '.apk'
         vt_detection = str(l[-4])
-        newFeature = zp.getFeature('../apks/'+apkName)
+        newFeature = zp.getFeature2('../apks/'+apkName)
 
         if newFeature == [0] * featureDIM or vt_detection == '':
             continue
@@ -42,6 +42,6 @@ if __name__ == '__main__':
         assert is_mal == 1 or is_mal == 0 , (l, vt_detection)
         fs.addFeature(newFeature, int(vt_detection))
 
-    fs.dump('featureSet')
+    fs.dump('featureSet2')
 
     dataList.close()
